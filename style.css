@@ -1,21 +1,23 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: #000;
+  color: #fff;
 }
 
 #game-container {
   width: 80%;
   margin: 40px auto;
-  background-color: #fff;
+  background-color: #333;
   padding: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #666;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 #game-text {
   font-size: 18px;
   margin-bottom: 20px;
+  color: #ccc;
 }
 
 #game-buttons {
@@ -24,14 +26,72 @@ body {
 }
 
 .game-button {
-  background-color: #4CAF50;
+  background-color: #333;
   color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .game-button:hover {
-  background-color: #3e8e41;
+  background-color: #444;
+}
+
+.game-button:active {
+  background-color: #555;
+}
+
+/* Add some spooky animations */
+
+#game-container {
+  animation: spooky-shadow 2s infinite;
+}
+
+@keyframes spooky-shadow {
+  0% {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  }
+  100% {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.game-button {
+  animation: spooky-button 2s infinite;
+}
+
+@keyframes spooky-button {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+.animate {
+  animation: spooky-animation 0.2s ease-in-out;
+}
+
+@keyframes spooky-animation {
+  0% {
+      transform: scale(1);
+      opacity: 1;
+  }
+  50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
 }

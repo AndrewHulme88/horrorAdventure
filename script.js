@@ -91,3 +91,42 @@ function renderScene() {
 }
 
 renderScene();
+
+// Add some spooky sound effects
+
+const soundEffects = {
+  scream: new Audio('scream.mp3'),
+  howl: new Audio('howl.mp3'),
+  creak: new Audio('creak.mp3')
+};
+
+// Play a sound effect when a button is clicked
+
+document.querySelectorAll('.game-button').forEach((button) => {
+  button.addEventListener('click', () => {
+      const soundEffect = soundEffects[Math.floor(Math.random() * Object.keys(soundEffects).length)];
+      soundEffect.play();
+  });
+});
+
+// Add some spooky animations when a button is clicked
+
+document.querySelectorAll('.game-button').forEach((button) => {
+  button.addEventListener('click', () => {
+      button.classList.add('animate');
+      setTimeout(() => {
+          button.classList.remove('animate');
+      }, 200);
+  });
+});
+
+// Add some spooky animations when the game text changes
+
+const gameText = document.getElementById('game-text');
+
+gameText.addEventListener('DOMSubtreeModified', () => {
+  gameText.classList.add('animate');
+  setTimeout(() => {
+      gameText.classList.remove('animate');
+  }, 200);
+});
